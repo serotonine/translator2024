@@ -1,0 +1,40 @@
+body {
+  --bs-body-bg: #ebeff2;
+}
+
+.bg-light-100 {
+  background-color: var(--bs-gray-100);
+}
+
+.bg-light-200 {
+  background-color: var(--bs-gray-200);
+}
+
+.bg-light-300 {
+  background-color: var(--bs-gray-300);
+}
+
+.bg-light-400 {
+  background-color: var(--bs-gray-400);
+}
+
+/* FORMS */
+.t_form-control {
+  display: block;
+  flex: 1;
+  /* width: 100%; */
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--bs-gray-100);
+  background-clip: padding-box;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+/* BUTTONS */

@@ -1,0 +1,29 @@
+<section class="bg-secondary">
+  <div class="container">
+    <h5>Choose what type of list</h5>
+    <form class="d-flex form-inline gap-2" [formGroup]="formChoose">
+      <select name="type" id="type" class="form-control" formControlName="type">
+        <option value="name">names</option>
+        <option value="verb">verbs</option>
+        <option value="zin">sentences</option>
+      </select>
+      <select name="language" id="language" class="form-control" formControlName="language">
+        <option value="nl-to-fr">nl >> fr</option>
+        <option value="fr-to-nl">fr >> nl</option>
+      </select>
+      <select name="date" id="date" class="form-control" formControlName="date">
+        <option value="">no date</option>
+        <option value="1">yesterday</option>
+        <option value="7">1 week</option>
+        <option value="14">2 weeks</option>
+        <option value="21">3 weeks</option>
+        <option value="30">1 month</option>
+        <option value="60">2 months</option>
+        <option value="90">3 months</option>
+        <option value="180">6 months</option>
+        <option value="365">1 year</option>
+      </select>
+      <input type="number" name="nb" id="nb" min="10" max="100" value="10" name="number" class="form-control" formControlName="number">
+    </form>
+  </div>
+</section>

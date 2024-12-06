@@ -1,0 +1,10 @@
+:host {
+  color: #fff;
+}
+:host > section {
+  padding: 1rem 0;
+}
+.form-control{
+  width:auto;
+  background-color: var(--bs-white);
+}

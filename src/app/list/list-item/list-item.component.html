@@ -1,0 +1,34 @@
+<!-- TODO: Directive -->
+<label for="translated" class="list__item-to-translate">{{lg== 'fr-to-nl'?term.fr:term.nl}}</label>
+<app-list-input 
+[props]="{
+  id:'translated',
+  placeholder:'Type the translation', 
+  word:lg== 'fr-to-nl'?term.nl:term.fr
+}"
+/>
+@if(term.perfectum){<input
+type="text"
+class="t_form-control"
+id="perfectum"
+name="perfectum"
+placeholder="Type the translation"
+(change)="onChange($event)">
+<span class="list__item--icon"></span>}
+@if(term.imperfectum){
+  <input 
+type="text" 
+class="t_form-control"
+id="imperfectum" 
+name="imperfectum" 
+placeholder="Type imperfectum" 
+(change)="onChange($event)">
+<span class="list__item--icon"></span>
+}
+<div class="list__item--solution" (mousedown)="showSolution()" (mouseout)="hideSolution()">
+  <span>&#x2753;</span>
+  @if(isSolutionVisible){
+    <div class="solution">{{lg=='fr-to-nl'?term.nl:term.fr}}</div>
+  }
+</div>
+

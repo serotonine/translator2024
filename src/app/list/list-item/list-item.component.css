@@ -1,0 +1,43 @@
+.list__item-to-translate{
+  min-width: 20ch;
+}
+
+.list__item--solution{
+  height:2rem;
+  width:2rem;
+  border-radius: 50%;
+  text-align: center;
+  background-color: var(--bs-white);
+  border: 1px solid var(--bs-red);
+  line-height: calc(2rem);
+  cursor:pointer;
+  position: relative;
+}
+
+.solution {
+  position:absolute;
+  left:50%;
+  top: -2rem;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: var(--bs-gray-800);
+  padding:0 .5rem;
+  text-align: center;
+  color:var(--bs-white);
+  border-radius:.25rem;
+  white-space: nowrap;
+  font-size: 0.9rem;
+
+}
+.solution::after{
+  content:"";
+  height: 1rem;
+  width:1rem;
+  background-color: transparent;
+  position:absolute;
+  bottom:-60%;
+  right:50%;
+  transform: translateX(50%);
+  border-style: solid;
+  border-width: 10px;
+  border-color: var(--bs-gray-800) transparent transparent  transparent;
+}
