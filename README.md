@@ -1,3 +1,5 @@
+ open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security
+
 # Translator
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.

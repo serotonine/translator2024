@@ -1,5 +1,5 @@
 .list__item-to-translate{
-  min-width: 20ch;
+  width: 20ch;
 }
 
 .list__item--solution{

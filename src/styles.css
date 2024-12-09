@@ -2,6 +2,7 @@ body {
   --bs-body-bg: #ebeff2;
 }
 
+/* BACKGROUND COLORS */
 .bg-light-100 {
   background-color: var(--bs-gray-100);
 }
@@ -37,4 +38,16 @@ body {
   border-radius: var(--bs-border-radius);
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
+
 /* BUTTONS */
+
+/* COMPONENTS */
+.t_flex-items{
+  display: flex;
+  gap: .5rem;
+  align-items: center ;
+  width: 100%;
+}
+.t_flex-items p{
+  margin-bottom:0;
+}

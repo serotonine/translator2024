@@ -1,1 +1,14 @@
-<p>manage-item works!</p>
+<form [formGroup]="form" class="t_flex-items">
+  <input type="text" class="t_form-control" id="nl" name="nl" [formControl]="form.controls.nl">
+  <input type="text"  class="t_form-control" id="fr" name="fr" [formControl]="form.controls.fr" >
+  @if(term.perfectum){
+  <input type="text" [value]="term.perfectum" class="t_form-control" id="perfectum" name="perfectum"
+    [formControl]="form.controls.perfectum">
+  }
+  @if(term.imperfectum){
+  <input type="text" [value]="term.imperfectum" class="t_form-control" id="imperfectum" name="imperfectum"
+    [formControl]="form.controls.imperfectum">
+  }
+  <button class="btn btn-light" (click)="onEdit()" [type]="isEdit? 'submit': 'button'" >{{isEdit? "save" : "edit"}}</button>
+  <button class="btn btn-danger" (click)="onDelete()" >delete </button>
+</form>

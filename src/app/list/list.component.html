@@ -1,14 +1,16 @@
-  <app-list-choose (list)="getChosenTerms($event)"/>
-  <section class="list">
-    <div class="container my-4">
-      @if(currentTerms() ){
-        @for(item of currentTerms(); track item.id){
-          <app-list-item [term]="item" [lg]="lg()" [class.bg-light-300]="$odd" [class.bg-light-400]="$even"/>
-        }
+<app-list-choose (list)="getChosenTerms($event)" />
+<section class="list">
+  <div class="container my-4">
+    @if(listService.currentTerms()){
+      @for(item of listService.currentTerms(); track item.id){
+      <app-item-container [stripe]="$index">
+        <app-list-item [term]="item" [lg]="lg()" />
+      </app-item-container>
       }
-      <div class="d-flex gap-2 mt-3" role="group">
-        <button type="button" class="btn btn-secondary" (click)="onAnotherList()">Another NAME List</button>
-        <button type="button" class="btn btn-secondary" (click)="onRepeat()">Repeat</button>
-      </div>
+    }
+    <div class="d-flex gap-2 mt-3" role="group">
+      <button type="button" class="btn btn-secondary" (click)="onAnotherList()">Another NAME List</button>
+      <button type="button" class="btn btn-secondary" (click)="onRepeat()">Repeat</button>
     </div>
-  </section>
+  </div>
+</section>

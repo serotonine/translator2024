@@ -7,11 +7,12 @@ import { ListService } from '../services/list.service';
 // Components.
 import { ListChooseComponent } from './list-choose/list-choose.component';
 import { ListItemComponent } from './list-item/list-item.component';
+import { ItemContainerComponent } from '../shared/item-container/item-container.component';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [ListChooseComponent, ListItemComponent],
+  imports: [ListChooseComponent, ListItemComponent, ItemContainerComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
 })
@@ -29,7 +30,7 @@ export class ListComponent implements OnInit {
     lg: string | null | undefined;
   }) {
     this.numberTerms = receive.nb ? +receive.nb : 10;
-    this.currentTerms.set(this.getList(receive.terms, this.numberTerms));
+    this.listService.currentTerms.set(this.getList(receive.terms, this.numberTerms));
     this.lg.set(receive.lg);
   }
   // To do directive or service.

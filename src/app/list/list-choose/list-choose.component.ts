@@ -40,10 +40,24 @@ export class ListChooseComponent implements OnInit {
   }>();
 
   getList(value: Partial<Choose>) {
+    if( value.type && this.listService.termsList().has(value.type)){
+      const list = this.listService.termsList().get(value.type);
+      if(list !== undefined){
+         this.list.emit({
+        terms: list,
+        nb: value.number,
+        lg: value.language,
+      });
+      return;
+      }
+    }
     return this._httpRequest
       .getList(value.type, value.date ? value.date : '')
       .subscribe({
         next: (response) => {
+          // Populate termsList.
+          this.listService.termsList().set(value.type || 'name', response)
+          // Populate Current List.
           this.listService.currentList = response;
           this.list.emit({
             terms: response,
@@ -62,7 +76,7 @@ export class ListChooseComponent implements OnInit {
       },
     });
     this._destroyRef.onDestroy(() => {
-      firstRequest.unsubscribe();
+     // firstRequest.unsubscribe();
       subscription.unsubscribe();
     });
   }

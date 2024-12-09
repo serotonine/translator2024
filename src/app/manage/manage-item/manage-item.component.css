@@ -1,0 +1,9 @@
+input:read-only,
+input:disabled{
+  background-color: transparent;
+  border:none;
+}
+input.ng-invalid{
+  background-color: rgb(220, 53, 69);
+
+}

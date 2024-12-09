@@ -6,6 +6,7 @@ export interface Term {
   date: string;
   perfectum?: string;
   imperfectum?: string;
+  showhide?:0;
 }
 
 export interface Choose {

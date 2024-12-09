@@ -24,9 +24,7 @@ export class ManageChooseComponent {
   // Form.
   formManage = new FormGroup({
     type: new FormControl('name'),
-    language: new FormControl('fr-to-nl'),
-    date: new FormControl(''),
-    number: new FormControl('10'),
+    language: new FormControl('nl-to-fr'),
   });
   // Services
   private _httpRequest = inject(HttpRequestService);
@@ -36,12 +34,17 @@ export class ManageChooseComponent {
   @Output() list = new EventEmitter<Term[]>();
 
   getList(value: Partial<Choose>) {
+    if(value.type && this.listService.termsList().has(value.type)){
+      this.list.emit(this.listService.termsList().get(value.type));
+      return;
+    }
     return this._httpRequest
       .getList(value.type, value.date ? value.date : '')
       .subscribe({
         next: (response) => {
-         this.listService.currentList = response;
-          this.list.emit(response);
+        this.listService.currentType = value.type || 'name';
+         this.listService.termsList().set(this.listService.currentType, response );
+          this.list.emit(this.listService.termsList().get(this.listService.currentType));
         },
       });
   }

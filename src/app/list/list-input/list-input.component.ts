@@ -10,7 +10,7 @@ import { ListService } from '../../services/list.service';
   templateUrl: './list-input.component.html',
   styleUrl: './list-input.component.css',
   host: {
-    class: 'd-flex align-items-center gap-2 mb-2 p-2 flex-grow-1',
+    class: 't_flex-items p-2 flex-grow-1',
   },
 })
 export class ListInputComponent implements OnInit {
