@@ -42,10 +42,13 @@ export class ManageChooseComponent {
       .getList(value.type, value.date ? value.date : '')
       .subscribe({
         next: (response) => {
-        this.listService.currentType = value.type || 'name';
-         this.listService.termsList().set(this.listService.currentType, response );
-          this.list.emit(this.listService.termsList().get(this.listService.currentType));
+          this.listService.currentType.set(value.type || 'name');
+          const type = this.listService.currentType();
+          this.listService.termsList().set(type, response );
         },
+        complete: () =>{
+          this.list.emit(this.listService.termsList().get(this.listService.currentType()));
+        }
       });
   }
 
@@ -61,5 +64,8 @@ export class ManageChooseComponent {
       subscription.unsubscribe();
     });
   }
-
+  // Event Handlers.
+  openManageModal(){
+    this.listService.isOpenModal.set(true);
+  }
 }

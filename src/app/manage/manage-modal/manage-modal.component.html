@@ -1,0 +1,48 @@
+<!-- <dialog class="modal" tabindex="-1" role="dialog" [open]="listService.isOpenModal()"> -->
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header d-flex">
+      <button type="button" class="btn t_btn-close btn-light" data-dismiss="modal" aria-label="Close" (click)="onclose()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h5 class="modal-title">Add new {{listService.currentType()}}</h5>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="formAdd" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="fr">Français</label>
+          @if(listService.currentType() == "zin"){
+            <textarea type="text" class="t_form-control" name="fr" id="fr" formControlName="fr"></textarea>
+          }
+          @else{ 
+            <input type="text" class="t_form-control" name="fr" id="fr" formControlName="fr">
+          }
+        </div>
+        <div class="mt-1">
+          <label for="nl">Nederland</label>
+          @if(listService.currentType() == "zin"){
+            <textarea rows="2" class="t_form-control" name="nl" id="nl" formControlName="nl"></textarea>
+          }
+          @else{
+            <input rows="2" class="t_form-control" name="nl" id="nl" formControlName="nl">
+          }
+        </div>
+        @if(type == "verb"){
+        <div class="mt-1">
+          <label for="zin">Perfectum</label>
+          <input type="text" class="t_form-control" name="perfectum" id="perfectum" formControlName="perfectum">
+        </div>
+        <div class="mt-1">
+          <label for="zin">Imperfectum</label>
+          <input type="text" class="t_form-control" name="imperfectum" id="imperfectum" formControlName="imperfectum">
+        </div>
+        }
+      </form>
+    </div>
+    <div class="modal-footer mt-3">
+      <button type="submit" class="btn btn-primary" (click)="onSubmit()">Save</button>
+      <button type="button" class="btn btn-secondary close" (click)="onclose()">Close</button>
+    </div>
+  </div>
+</div>
+<!-- </dialog> -->

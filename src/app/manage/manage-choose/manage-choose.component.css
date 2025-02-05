@@ -4,7 +4,7 @@
 :host > section {
   padding: 1rem 0;
 }
-.form-control{
+.t_form-control{
   width:auto;
   background-color: var(--bs-white);
 }

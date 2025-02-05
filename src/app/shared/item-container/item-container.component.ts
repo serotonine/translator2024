@@ -6,9 +6,6 @@ import { Component, Input, HostBinding } from '@angular/core';
   imports: [],
   templateUrl: './item-container.component.html',
   styleUrl: './item-container.component.css',
-  host: {
-    class: 'd-flex align-items-center gap-2 mb-2 p-2',
-  },
 })
 export class ItemContainerComponent {
   @Input({ required: true }) stripe!: number;

@@ -1,4 +1,4 @@
-input:read-only,
+/* input:read-only,
 input:disabled{
   background-color: transparent;
   border:none;
@@ -6,4 +6,4 @@ input:disabled{
 input.ng-invalid{
   background-color: rgb(220, 53, 69);
 
-}
+} */

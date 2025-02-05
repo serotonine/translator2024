@@ -1,0 +1,33 @@
+.loggin {
+  opacity: 0;
+  animation: appears 0.5s forwards;
+}
+
+.loggin__form {
+  background-color: hsl(210deg 16.67% 97.65% / 75%);
+  border: 1px solid hsl(210deg 16.67% 97.65% / 85%);
+  padding: 1.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+}
+
+.loggin__form input:not([type='password']),
+button[type="submit"] {
+  width: 100%;
+}
+
+small.comment {
+  color: var(--bs-gray-600);
+  font-size: .75rem;
+}
+
+@keyframes appears {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

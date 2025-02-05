@@ -2,10 +2,10 @@ header{
   width: 100%;
     min-height: 60px;
     border-bottom: 1px solid #AA0C19 /*#5cb19b*/;
-    background: #DD1424;
-    background-image: -webkit-linear-gradient(top, #DD1424 50%, #D81625 50%);
-    background-image: -moz-linear-gradient(top, #DD1424 50%, #D81625 50%);
-    background-image: linear-gradient(top, #DD1424 50%, #D81625 50%);
+    background: var(--bs-red);
+    background-image: -webkit-linear-gradient(top,var(--bs-red) 50%, #D81625 50%);
+    background-image: -moz-linear-gradient(top,var(--bs-red) 50%, #D81625 50%);
+    background-image: linear-gradient(top,var(--bs-red) 50%, #D81625 50%);
     -webkit-box-shadow: 0 8px 6px -6px black;
     -moz-box-shadow: 0 8px 6px -6px black;
     box-shadow: 0px 1px 4px 0px #ccc;

@@ -1,0 +1,71 @@
+:host{
+  top:50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: .3rem;
+  outline: 0;
+  opacity:0;
+}
+:host[open]{
+  animation: appears 0.5s 1;
+  animation-fill-mode: forwards;
+}
+
+.modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.t_btn-close.btn{
+  align-self: flex-end;
+}
+
+.modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  outline: 0;
+}
+
+.modal-footer{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap:.5rem;
+  justify-content: center;
+}
+.modal-footer > button{
+  flex:1;
+}
+
+@keyframes appears {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity: 1;
+  }
+  
+}

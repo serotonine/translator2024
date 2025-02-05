@@ -1,5 +1,8 @@
 .list__item-to-translate{
-  width: 20ch;
+  width: 30ch;
+}
+.list__item-to-translate.zin{
+  width: 50ch;
 }
 
 .list__item--solution{

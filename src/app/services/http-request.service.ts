@@ -10,10 +10,12 @@ import { type Term, type Choose } from '../models/list.model';
 })
 export class HttpRequestService {
   private _httpClient = inject(HttpClient);
+  // TODO remove request and params : restAPI.php?request=name/1/7
   private _baseUrl = 'https://serotonine.alwaysdata.net/restapi/restAPI.php';
+  //TODO: Delete.
   private _url =
     'https://serotonine.alwaysdata.net/restapi/restAPI.php?request=name/1/7';
-  /* constructor() { } */
+
   // GET.
   getList(type: string | null | undefined, date: string | null) {
     const options = {
@@ -23,10 +25,19 @@ export class HttpRequestService {
       .get<[]>(this._baseUrl, options)
       .pipe(catchError((error) => throwError(() => new Error(error.message))));
   }
+  // POST.
+    // $type, $user,$fr,$nl,$perf=null,$imperf=null
+  addTerm(type: string, options:{}){
+    const _options = Object.values(options).filter((value) => typeof value ==='string' && value.length >=1 ).join('/');
+    return this._httpClient
+      .post(`https://serotonine.alwaysdata.net/restapi/restAPI.php?request=${type}/1/null/${_options}`,_options)
+      .pipe(
+        map((resp) => Object.values(resp)[0]),
+        catchError((error) => throwError(() => new Error(error.message))));
+  }
   // UPDATE.
   updateList(type: string, id: number, options: {}) {
     const _options = Object.values(options).filter((value) => typeof value ==='string' && value.length >=1 ).join('/');
-    console.log(_options);
     
     return this._httpClient
       // $type,$id, $user,$fr,$nl,$perf=null,$imperf=null
