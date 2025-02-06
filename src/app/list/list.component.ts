@@ -65,6 +65,5 @@ export class ListComponent implements OnInit {
   }
   onAnotherList() {
       this.currentTerms.set(this.getList(this.listService.currentList, this.numberTerms));
-    
   }
 }

@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { PwdComponent } from './pwd/pwd.component';
 // Form.
 import {
+  ReactiveFormsModule,
   FormControl,
   FormGroup,
-  ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+// Component.
+import { PwdComponent } from './pwd/pwd.component';
 
 @Component({
   selector: 'app-loggin',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, PwdComponent],
+  imports: [ReactiveFormsModule, PwdComponent],
   templateUrl: './loggin.component.html',
   styleUrl: './loggin.component.css'
 })

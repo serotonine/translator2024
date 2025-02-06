@@ -1,0 +1,60 @@
+<div class="container my-5">
+  <!-- Registration -->
+  <section class="loggin">
+  <div class="text-center mb-2">
+    <h3>Registration</h3>
+    <p>
+      <small>I remember my account !
+        <a class="text-danger" data-target="loggin" href="loggin">
+          Go to sign in</a>.
+      </small>
+    </p>
+  </div>
+  <form [formGroup]="registerForm" class="loggin__form" (ngSubmit)="registration(registerForm)">
+    <p class="small-comment">
+      <small>All fields are required.</small>
+    </p>
+    <label for="name">Name</label>
+    <input 
+      type="text"
+      id="name"
+      name="name"
+      required
+      class="t_form-control mb-2"
+      formControlName="name"
+    >
+    <p class="small-comment">
+      <small>Please, No accented or special characters.</small>
+    </p>
+    
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      class="t_form-control mb-2"
+      formControlName="email"
+    >
+    <app-pwd [props] = "{
+      id:'pwd1',
+      label:'Password',
+      parent :registerForm,
+      validation:true }"
+     />
+    <p class="small-comment">
+      <small>
+        The password must have min 8 characters: Uppercase(s), lowercase(s) and
+        number(s)
+      </small>
+    </p>
+    <app-pwd [props] = "{
+      id:'pwd2',
+      label:'Confirm Password',
+      parent :registerForm,
+      validation:false }"
+     />
+    <button class="btn btn-outline-secondary mt-4" [disabled]="registerForm.invalid" type="submit">Go!</button>
+  </form>
+  </section>
+  </div>

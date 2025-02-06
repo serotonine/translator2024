@@ -1,11 +1,14 @@
 <header>
   <div class="container d-flex justify-content-between">
     <div class="d-flex">
-<a href="" class="btn text-light">Home</a>
-  <a href="manage" class="btn text-light">Manage my translate</a>
+  <a href="home" class="btn text-light" appActive>Home</a>
+  @if(globals.isLogged){
+    <a href="manage" class="btn text-light" appActive>Manage my translate</a>
+  }
   </div>
-  <div>
-    <a href="loggin" class="btn text-light">Login</a>
-  </div>
+    <div>
+      <a href="loggin" class="btn text-light" appActive>Login</a>
+      <a href="registration" class="btn text-light" appActive>Register</a>
+    </div>
   </div>
 </header>
