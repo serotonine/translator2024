@@ -13,34 +13,51 @@
         </small>
       </p>
     </div>
-    <form #registerForm="ngForm" class="loggin__form" (ngSubmit)="registration(registerForm.value)">
+    <form [formGroup]="registerForm" class="loggin__form" (ngSubmit)="registration(registerForm)">
+      <p class="small-comment">
+        <small>All fields are required.</small>
+      </p>
       <label for="name">Name</label>
       <input 
         type="text"
         id="name"
         name="name"
-        class="t_form-control mb-2"
         required
-        ngModel
+        class="t_form-control mb-2"
+        formControlName="name"
       >
+      <p class="small-comment">
+        <small>Please, No accented or special characters.</small>
+      </p>
+      
       <label for="email">Email</label>
       <input
-      type="email"
-      id="email"
-      name="email"
-      class="t_form-control mb-2"
-      required
-      ngModel
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="t_form-control mb-2"
+        formControlName="email"
       >
-      <app-pwd id="pwd1" label="Password" />
-      <p>
-        <small class="comment">
+      <app-pwd [props] = "{
+        id:'pwd1',
+        label:'Password',
+        parent :registerForm,
+        validation:true }"
+       />
+      <p class="small-comment">
+        <small>
           The password must have min 8 characters: Uppercase(s), lowercase(s) and
           number(s)
         </small>
       </p>
-      <app-pwd id="pwd2" label="Confirm Password" />
-      <button class="btn btn-outline-secondary mt-4" type="submit">Go!</button>
+      <app-pwd [props] = "{
+        id:'pwd2',
+        label:'Confirm Password',
+        parent :registerForm,
+        validation:false }"
+       />
+      <button class="btn btn-outline-secondary mt-4" [disabled]="registerForm.invalid" type="submit">Go!</button>
     </form>
     </section>
     }
@@ -56,7 +73,7 @@
         </small>
       </p>
     </div>
-    <form #logginForm="ngForm" class="loggin__form" (ngSubmit)="loggin(logginForm.value)">
+    <form [formGroup]="logginForm" class="loggin__form" (ngSubmit)="loggin(logginForm)">
       <label for="log_email">Email</label>
       <input
         type="email"
@@ -64,11 +81,15 @@
         id="log_email"
         class="t_form-control mb-2"
         required
-        ngModel
+        formControlName="log_email"
       >
-      <app-pwd id="log_pwd" label="Password" (ngModelChange)="onChildValueChange($event)" 
+      <app-pwd  [props] = "{
+        id:'log_pwd',
+        label:'Password',
+        parent :logginForm,
+        validation:false}"
        />
-      <button class="btn btn-outline-secondary mt-4" type="submit">Go!</button>
+      <button class="btn btn-outline-secondary mt-4" [disabled]="logginForm.invalid" type="submit">Go!</button>
     </form>
   </section>
     }

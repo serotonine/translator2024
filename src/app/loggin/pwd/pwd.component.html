@@ -1,0 +1,11 @@
+<label for={{props.id}}>{{props.label}}</label>
+<div class="loggin__form--pwd mb-2" (click)="showPwd($event)" [formGroup]="props.parent">
+  <input 
+    required
+    type="{{isShowing ? 'text' : 'password'}}"
+    [id]="props.id"
+    name="{{props.id}}"
+    class="t_form-control"
+    [formControl]="pwdCtrl">
+  <div class="show-pwd"><i class="bi {{eyeIcon}}"></i></div>
+</div>

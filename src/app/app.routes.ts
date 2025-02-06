@@ -10,10 +10,12 @@ export const routes: Routes = [
   },
   {
     path: 'manage',
+    title: 'Translator/Loggin',
     component:ManageComponent,
   },
   {
     path: 'loggin',
+    title: 'Translator/Loggin',
     component:LogginComponent,
-  }
+  },
 ];

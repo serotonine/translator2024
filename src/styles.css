@@ -48,7 +48,7 @@ textarea:disabled{
 input.ng-dirty.ng-invalid,
 textarea.ng-dirty.ng-invalid
 {
-  background-color: var(--bs-red);
+  background-color:hsl(0deg 100% 95.53%);
 }
 
 /* Buttons */

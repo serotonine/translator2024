@@ -3,7 +3,6 @@ import {
   effect,
   ElementRef,
   inject,
-  OnInit,
   signal,
 } from '@angular/core';
 // Form.
@@ -44,9 +43,7 @@ export class ManageModalComponent {
   constructor(private hostElement: ElementRef){
     
     effect(() => {
-      /* 
-       Subscribe to boolean signal isOpenModal().
-      */
+      // Subscribe to boolean signal isOpenModal().
       if(this.listService.isOpenModal()){
         hostElement.nativeElement.showModal();
       }

@@ -17,9 +17,10 @@ button[type="submit"] {
   width: 100%;
 }
 
-small.comment {
+.small-comment {
   color: var(--bs-gray-600);
-  font-size: .75rem;
+  font-size: .85rem;
+  line-height: 1rem;
 }
 
 @keyframes appears {
